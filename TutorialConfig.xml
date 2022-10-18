@@ -1,0 +1,7 @@
+<root>
+    <Module class = "HelloWorld::MyModule">
+            <myInteger>42</myInteger>
+            <myFloat>13.37</myFloat>
+            <myString>This is a test</myString>
+    </Module>
+</root>
