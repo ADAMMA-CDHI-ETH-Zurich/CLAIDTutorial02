@@ -16,4 +16,4 @@ add_executable(MyApplication
     ${PROJECT_SOURCES}
     ${CLAID_SOURCES})
 
-target_link_libraries(MyApplication pthread)
+target_link_libraries(MyApplication ${CLAID_LINK_LIBRARIES})
