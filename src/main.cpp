@@ -37,10 +37,25 @@ namespace HelloWorld
 // It allows instantiating this Module from an XML configuration.
 REGISTER_MODULE(HelloWorld::MyModule)
 
-int main()
+
+#include "Utilities/ArgumentParser.hpp"
+int main(int argc, char** argv) 
 {
+    ArgumentParser parser(argc, argv);
+
+    std::string configPath = "";
+    parser.add_argument<std::string>("path", configPath, "", "");
+
+    if(configPath == "")
+    {
+        printf("Error, no path to XML configuration specified.\n"
+        "Please use ./MyApplication path path/to/xml/file.\n"
+        "E.g.: ./MyApplication path TutorialConfig.xml\n");
+        exit(0);
+    }
+
     // Loading Modules from an XML file.    
-    CLAID_RUNTIME->loadFromXML("TutorialConfig.xml");
+    CLAID_RUNTIME->loadFromXML(configPath);
 
     // Starting CLAID Runtime, which automatically will initialize all Modules.
     CLAID_RUNTIME->start();
