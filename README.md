@@ -1,2 +1,2 @@
 # CLAIDTutorial02
-Tutorial 01 of CLAID. 
+Tutorial 02 of CLAID. 
